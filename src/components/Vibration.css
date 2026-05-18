@@ -1,0 +1,183 @@
+/* ==========================================================================
+   VIBRATION ANALYSIS & FFT DIAGNOSTICS - STYLES (SYNCED UI)
+   ========================================================================== */
+
+.vib-wrapper {
+  background-color: #f4f7f9;
+  min-height: 100vh;
+}
+
+.vib-content {
+  padding: 100px 40px 40px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- HEADER ĐỒNG BỘ SCADA --- */
+.vib-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.vib-header-left h1 { 
+  font-size: 1.8rem; 
+  font-weight: 700; 
+  color: #002d5b; 
+  margin: 0; 
+}
+.vib-header-left p { 
+  color: #64748b; 
+  font-size: 1rem; 
+  margin: 4px 0 0 0; 
+  font-weight: 600;
+}
+.vib-header-right {
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  color: #64748b; 
+  font-size: 0.9rem; 
+  font-weight: 600;
+}
+
+/* --- THẺ CHUNG (CARDS) --- */
+.vib-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.vib-card-title {
+  font-size: 1.1rem; 
+  font-weight: 700; 
+  color: #002d5b;
+  margin-bottom: 20px; 
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+/* --- KHU VỰC UPLOAD --- */
+.vib-upload-zone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.vib-upload-zone:hover, .vib-upload-zone.active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+.vib-upload-icon {
+  width: 64px; height: 64px; border-radius: 50%; background: #e0f2fe; color: #3b82f6;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+}
+.vib-upload-text h3 { margin: 0 0 8px 0; font-size: 1.1rem; color: #0f172a; font-weight: 700; }
+.vib-upload-text p { margin: 0; font-size: 0.85rem; color: #64748b; }
+
+/* --- FILE ĐÃ TẢI LÊN --- */
+.vib-file-info {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+}
+.vib-file-details { display: flex; align-items: center; gap: 16px; }
+.vib-file-icon { width: 48px; height: 48px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #475569; }
+.vib-file-text h4 { margin: 0 0 4px 0; font-size: 1rem; color: #0f172a; }
+.vib-file-text p { margin: 0; font-size: 0.85rem; color: #64748b; }
+
+/* --- BUTTONS --- */
+.vib-btn {
+  padding: 8px 20px; background: #3b82f6; color: white; border: none; border-radius: 8px;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.vib-btn:hover { background: #2563eb; transform: translateY(-2px); }
+.vib-btn:disabled { background: #94a3b8; cursor: not-allowed; transform: none; }
+.vib-btn-outline { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+.vib-btn-outline:hover { background: #f1f5f9; color: #0f172a; transform: translateY(-2px); }
+
+/* --- BIỂU ĐỒ & CUSTOM LEGEND --- */
+.vib-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  animation: fadeIn 0.5s ease;
+}
+
+.vib-chart-wrapper {
+  /* Bỏ nền xám cũ, dùng nền trắng chuẩn SCADA */
+  background: #fff; 
+  padding: 10px 0 0 0; 
+  border-radius: 12px; 
+}
+
+.vib-chart-box {
+  height: 350px;
+  width: 100%;
+}
+
+.vib-custom-legend { 
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; 
+  margin-top: 15px; margin-bottom: 5px; 
+}
+.vib-legend-item { 
+  display: flex; align-items: center; gap: 6px; 
+  font-size: 0.85rem; font-weight: 600; color: #475569; cursor: default; 
+}
+.vib-legend-color { width: 16px; height: 6px; border-radius: 2px; }
+
+.vib-controls {
+  display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.vib-select {
+  padding: 8px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem;
+  font-weight: 600; outline: none; color: #0f172a; cursor: pointer; background: #fff;
+  transition: all 0.2s;
+}
+.vib-select:hover { border-color: #94a3b8; }
+.vib-select:focus { border-color: #3b82f6; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vib-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vib-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.vib-breadcrumb a:hover {
+  color: #002d5b;
+}
+
+.vib-breadcrumb span.current-page {
+  color: #002d5b;
+}

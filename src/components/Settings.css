@@ -1,0 +1,231 @@
+/* ==========================================================================
+   SETTINGS - SIDEBAR TABS LAYOUT (STYLE PROFILE)
+   ========================================================================== */
+
+.settings-wrapper {
+  background-color: #f4f7f9;
+  min-height: 100vh;
+}
+
+.settings-content {
+  padding: 100px 40px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  margin-bottom: 30px;
+}
+.settings-header h1 { 
+  font-size: 1.8rem; font-weight: 700; color: #002d5b; margin: 0 0 8px 0; 
+}
+.settings-header p { 
+  color: #64748b; margin: 0; font-size: 0.95rem; 
+}
+
+/* LƯỚI LAYOUT: TRÁI (SIDEBAR) - PHẢI (CONTENT) */
+.settings-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* ========================================================
+   SIDEBAR MENU
+   ======================================================== */
+.settings-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.settings-menu-item:hover {
+  background: #fff;
+  color: #0f172a;
+}
+.settings-menu-item.active {
+  background: #fff;
+  color: #002d5b;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+/* ========================================================
+   MAIN PANEL CONTENT
+   ======================================================== */
+.settings-panel {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  padding: 30px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.settings-panel-title {
+  font-size: 1.2rem; font-weight: 700; color: #0f172a;
+  margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;
+  display: flex; align-items: center; gap: 10px;
+}
+
+/* --- FORM ELEMENTS --- */
+.settings-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.settings-form-group { margin-bottom: 20px; }
+.settings-full-width { grid-column: span 2; }
+
+.settings-label {
+  font-size: 0.85rem; color: #64748b; margin-bottom: 6px; display: block; font-weight: 600;
+}
+
+.settings-input, .settings-select { 
+  width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; 
+  font-size: 0.95rem; background: #fff; transition: 0.2s; outline: none; color: #1e293b; box-sizing: border-box;
+}
+.settings-input:focus, .settings-select:focus { 
+  border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); 
+}
+.settings-input:disabled { background: #f8fafc; color: #94a3b8; cursor: not-allowed; }
+
+/* BUTTONS */
+.settings-btn { 
+  padding: 12px 24px; background: #002d5b; color: white; border: none; border-radius: 8px; 
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.2s; 
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.settings-btn:hover { background: #001f3f; transform: translateY(-2px); }
+
+.settings-btn-outline { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+.settings-btn-outline:hover { background: #f8fafc; color: #0f172a; transform: translateY(-2px); }
+
+.settings-btn-danger { background: #fff; color: #ef4444; border: 1px solid #fca5a5; padding: 10px; cursor: pointer; border-radius: 8px; transition: 0.2s;}
+.settings-btn-danger:hover { background: #fee2e2; transform: translateY(-2px); }
+
+/* --- 1. PROFILE SECTION --- */
+.set-avatar-section { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+.set-avatar-wrap {
+  position: relative; width: 80px; height: 80px; border-radius: 50%; background: #002d5b; color: white;
+  display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; overflow: hidden;
+}
+.set-avatar-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%; /* Chiếm chính xác 1 nửa ảnh */
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;     /* Căn giữa chiều dọc */
+  justify-content: center; /* Căn giữa chiều ngang */
+  gap: 6px;
+  font-size: 0.8rem; 
+  font-weight: 600;
+  cursor: pointer; 
+  opacity: 0; 
+  transition: 0.2s;
+}
+.set-avatar-wrap:hover .set-avatar-overlay { opacity: 1; }
+
+/* --- 2. FARMS SECTION --- */
+.set-farm-list { display: flex; flex-direction: column; gap: 12px; }
+.set-farm-item {
+  display: flex; justify-content: space-between; align-items: center; padding: 16px;
+  background: #fff; border: 1px solid #cbd5e1; border-radius: 12px; cursor: pointer; transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.set-farm-item:hover { border-color: #3b82f6; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); }
+.set-farm-info h4 { margin: 0 0 4px 0; color: #0f172a; font-size: 1rem; }
+.set-farm-info p { margin: 0; color: #64748b; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; }
+
+/* Đã sửa dashed thành solid */
+.set-farm-add-box { background: #fff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px; margin-top: 20px; }
+.set-code-wrapper { display: flex; gap: 12px; margin-top: 12px; }
+
+.set-source-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.set-source-toggle {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px;
+  border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; cursor: pointer; transition: 0.2s;
+}
+.set-source-toggle.active { border-color: #10b981; background: #fff; color: #10b981; box-shadow: 0 0 0 1px #10b981;}
+
+.set-zone-row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+
+/* --- 3. SECURITY SECTION --- */
+.set-sec-block { margin-bottom: 30px; }
+.set-sec-block:last-child { margin-bottom: 0; }
+.set-sec-title { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; }
+
+.set-2fa-box {
+  display: flex; justify-content: space-between; align-items: center; padding: 16px;
+  background: #fff; border: 1px solid #cbd5e1; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.set-switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+.set-switch input { opacity: 0; width: 0; height: 0; }
+.set-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbd5e1; transition: .3s; border-radius: 24px; }
+.set-slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.set-switch input:checked + .set-slider { background-color: #10b981; }
+.set-switch input:checked + .set-slider:before { transform: translateX(20px); }
+
+.set-session-item { display: flex; justify-content: space-between; align-items: center; padding: 16px; border: 1px solid #cbd5e1; border-radius: 12px; background: #fff; margin-bottom: 12px; }
+.set-badge-current { background: #d1fae5; color: #059669; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 800; margin-left: 8px; }
+
+@media (max-width: 900px) {
+  .settings-layout { grid-template-columns: 1fr; }
+}
+
+/* ========================================================
+   SIDEBAR MENU (ĐÃ BỌC VÀO THẺ CARD TRẮNG)
+   ======================================================== */
+.settings-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;             /* Bọc nền trắng */
+  padding: 24px;                /* Đệm bên trong bằng với Panel bên phải */
+  border-radius: 16px;          /* Bo góc */
+  border: 1px solid #e2e8f0;    /* Viền mỏng */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02); /* Đổ bóng nhẹ */
+}
+
+/* ========================================================
+   BREADCRUMB (Đường dẫn Home > Settings)
+   ======================================================== */
+.settings-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.settings-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.settings-breadcrumb a:hover {
+  color: #002d5b;
+}
+
+.settings-breadcrumb span.current-page {
+  color: #002d5b;
+}

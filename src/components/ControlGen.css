@@ -1,0 +1,357 @@
+/* ==========================================================================
+   CONTROL GENERATOR - INDUSTRIAL SCADA LAYOUT
+   ========================================================================== */
+
+.cg-wrapper {
+  background-color: #f4f7f9;
+  min-height: 100vh;
+}
+
+.cg-content {
+  padding: 100px 40px 40px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- PAGE HEADER (Đã đồng bộ với Monitoring) --- */
+.cg-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Đổi thành flex-end giống Dashboard */
+  margin-bottom: 10px;   /* Đổi thành 10px */
+}
+.cg-page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;      /* Giảm từ 800 xuống 700 */
+  color: #002d5b;
+  margin: 0;             /* Bỏ margin-bottom */
+}
+.cg-page-header p {
+  color: #64748b;
+  font-size: 1rem;       /* Tăng lên 1rem */
+  margin: 4px 0 0 0;
+}
+
+/* --- GRID LAYOUT 2:1 --- */
+.cg-grid-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.cg-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- SPLIT CỘT TRÁI: TỈ LỆ 1:2 (CONTROL 1, LIVE STATUS 2) --- */
+.cg-control-live-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  gap: 24px;
+}
+
+/* --- CARDS --- */
+.cg-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CARD TITLE (Đã đồng bộ với Monitoring) --- */
+.cg-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;      /* Giảm từ 800 xuống 700 */
+  color: #002d5b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;              /* Thêm gap cho icon */
+  justify-content: flex-start; /* Chỉnh lại để icon đi kèm chữ */
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+  /* ĐÃ XÓA: text-transform: uppercase; */
+}
+
+.cg-card-title.log-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* --- 1. SELECT GENERATOR --- */
+.cg-select-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cg-dropdown {
+  flex: 1; padding: 10px 16px; border-radius: 8px; border: 1px solid #cbd5e1;
+  font-size: 1rem; font-weight: 600; color: #0f172a; outline: none;
+  cursor: pointer; background-color: #f8fafc;
+}
+
+.cg-tag-count {
+  background: #e0f2fe; color: #0284c7; padding: 6px 12px; border-radius: 20px;
+  font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 6px;
+}
+
+.cg-gen-profile {
+  display: flex; gap: 24px; background: #fff; padding: 16px;
+  border-radius: 10px; border: 1px solid #e2e8f0; 
+}
+
+.cg-gen-img {
+  width: 150px; height: 120px; border-radius: 8px; object-fit: cover;
+  border: 1px solid #e2e8f0; flex-shrink: 0;
+}
+
+.cg-gen-info {
+  flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.cg-info-col { display: flex; flex-direction: column; gap: 12px; }
+.cg-info-item { display: flex; flex-direction: column; gap: 4px; }
+.cg-info-lbl { font-size: 0.75rem; color: #64748b; font-weight: 700; text-transform: uppercase; }
+.cg-info-val { font-size: 0.95rem; color: #0f172a; font-weight: 700; }
+
+/* --- 2. CONTROL PANEL --- */
+.cg-control-group { margin-bottom: 20px; }
+.cg-control-group:last-child { margin-bottom: 0; }
+.cg-control-lbl { font-size: 0.9rem; font-weight: 700; color: #475569; margin-bottom: 12px; display: block; }
+
+/* Mode Switch */
+.cg-mode-switch {
+  display: flex; background: #f1f5f9; border-radius: 8px; padding: 4px; width: 100%;
+}
+.cg-mode-btn {
+  flex: 1; padding: 8px 0; border: none; background: transparent; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 700; color: #64748b; cursor: pointer; transition: 0.2s; text-align: center;
+}
+.cg-mode-btn.active { background: #fff; color: #002d5b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+/* Buttons Grid */
+.cg-action-grid {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 12px; 
+  margin-bottom: 20px;
+}
+.cg-btn-action {
+  padding: 12px 8px; 
+  border: none; 
+  border-radius: 8px; 
+  font-size: 0.85rem; 
+  font-weight: 700;
+  color: #fff; 
+  cursor: pointer; 
+  transition: 0.2s; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 6px; 
+}
+.cg-auto-wrap {
+  grid-column: 1 / -1; 
+  display: flex;
+  justify-content: center; 
+}
+.cg-btn-auto {
+  width: calc(50% - 6px); 
+  background: #8b5cf6; 
+}
+.cg-btn-auto:hover:not(:disabled) { background: #7c3aed; }
+
+.cg-btn-start { background: #10b981; } .cg-btn-start:hover:not(:disabled) { background: #059669; }
+.cg-btn-stop { background: #ef4444; } .cg-btn-stop:hover:not(:disabled) { background: #dc2626; }
+.cg-btn-sync { background: #3b82f6; } .cg-btn-sync:hover:not(:disabled) { background: #2563eb; }
+.cg-btn-estop { background: #b91c1c; } .cg-btn-estop:hover:not(:disabled) { background: #991b1b; }
+.cg-btn-action:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Speed Input */
+.cg-speed-wrap { display: flex; gap: 8px; align-items: center; }
+.cg-speed-input {
+  flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace; font-size: 1.1rem; font-weight: 700; color: #0f172a;
+}
+.cg-btn-apply {
+  padding: 10px 16px; background: #002d5b; color: #fff; border: none; border-radius: 8px;
+  font-weight: 700; cursor: pointer; transition: 0.2s;
+}
+.cg-btn-apply:hover { background: #001f3f; }
+
+/* --- 3. LIVE FEEDBACK --- */
+.cg-live-list { display: flex; flex-direction: column; }
+.cg-live-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0; border-bottom: 1px dashed #e2e8f0;
+}
+.cg-live-item:last-child { border-bottom: none; padding-bottom: 0; }
+.cg-live-lbl { font-size: 0.9rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+.cg-live-val { font-family: 'Courier New', Courier, monospace; font-size: 1.4rem; font-weight: 800; color: #0f172a;}
+.cg-live-val span { font-size: 0.85rem; color: #94a3b8; margin-left: 6px; font-family: sans-serif;}
+
+/* --- 4. PRE-START CHECK --- */
+.cg-check-list { display: flex; flex-direction: column; }
+.cg-check-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 0; border-bottom: 1px dashed #e2e8f0;
+  transition: 0.3s ease;
+}
+.cg-check-item:last-child { border-bottom: none; padding-bottom: 0; }
+.cg-check-item.disabled { opacity: 0.5; }
+.cg-check-info { display: flex; flex-direction: column; gap: 4px; }
+.cg-check-name { font-size: 0.9rem; font-weight: 700; color: #1e293b; }
+.cg-check-desc { font-size: 0.8rem; color: #64748b; font-weight: 600; }
+
+.cg-check-status { font-size: 0.85rem; font-weight: 800; }
+.cg-check-status.ok { color: #10b981; }
+.cg-check-status.warn { color: #f59e0b; }
+.cg-check-status.na { color: #94a3b8; }
+
+/* --- 5. SCHEDULE --- */
+.cg-schedule-list { display: flex; flex-direction: column; margin-bottom: 4px;}
+.cg-schedule-item {
+  display: flex; justify-content: space-between; align-items: center; 
+  padding: 14px 0; border-bottom: 1px dashed #e2e8f0;
+}
+.cg-schedule-item:last-child { border-bottom: none; }
+.cg-sch-info { display: flex; flex-direction: column; gap: 4px; }
+.cg-sch-time { font-size: 1rem; font-weight: 800; color: #0f172a; }
+.cg-sch-days { font-size: 0.8rem; color: #64748b; font-weight: 600; }
+
+/* Toggle Switch CSS */
+.cg-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.cg-toggle input { opacity: 0; width: 0; height: 0; }
+.cg-toggle-slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cbd5e1; transition: .3s; border-radius: 24px;
+}
+.cg-toggle-slider:before {
+  position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+  background-color: white; transition: .3s; border-radius: 50%;
+}
+.cg-toggle input:checked + .cg-toggle-slider { background-color: #10b981; }
+.cg-toggle input:checked + .cg-toggle-slider:before { transform: translateX(20px); }
+
+/* NÚT ADD SCHEDULE (CĂN GIỮA, 50% WIDTH, PILL SHAPE) */
+.cg-btn-add-sch {
+  width: 50%;
+  margin: 20px auto 0 auto; 
+  padding: 10px; 
+  background: #e0f2fe; 
+  border: none; 
+  color: #0284c7; 
+  border-radius: 50px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.cg-btn-add-sch:hover { background: #bae6fd; color: #0369a1; }
+
+/* ==========================================================================
+   COMMAND LOG TABLE (ĐÃ ĐỒNG BỘ 100% VỚI TRANG CONTROL DEV)
+   ========================================================================== */
+.cg-log-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  text-align: left; 
+  table-layout: fixed; 
+}
+
+/* ĐÃ COPY Y HỆT CSS BẢNG LOG MÀY ĐƯA */
+.cg-log-table th:nth-child(1) { width: 180px; } 
+.cg-log-table th:nth-child(2) { width: 120px; } 
+.cg-log-table th:nth-child(3) { width: 160px; } 
+.cg-log-table th:nth-child(4) { width: 130px; } 
+.cg-log-table th:nth-child(5) { width: 120px; } 
+.cg-log-table th:nth-child(6) { width: auto; }  
+
+.cg-log-table th {
+  padding: 16px 12px; 
+  font-size: 0.85rem; font-weight: 800; color: #64748b;
+  border-bottom: 2px solid #cbd5e1; text-transform: uppercase;
+}
+.cg-log-table td {
+  padding: 16px 12px; 
+  font-size: 0.9rem; font-weight: 600; color: #1e293b;
+  border-bottom: 1px solid #f1f5f9; vertical-align: middle;
+  word-wrap: break-word;
+}
+
+.cg-log-time-wrap { display: flex; justify-content: space-between; align-items: center; width: 150px; }
+.cg-log-date { color: #64748b; font-size: 0.85rem; }
+.cg-log-time { color: #0f172a; font-weight: 700; font-family: 'Courier New', Courier, monospace;}
+
+/* TEXT BÌNH THƯỜNG CHO COMMAND & STATUS (BỎ Ô/BADGE) */
+.cmd-text { 
+  font-size: 0.85rem; font-weight: 800; color: #475569; text-transform: uppercase; 
+}
+.status-text { 
+  font-size: 0.85rem; font-weight: 800; text-transform: uppercase; 
+}
+.status-text.success { color: #16a34a; }
+.status-text.failed { color: #dc2626; }
+
+/* Nút Export */
+.export-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: #fff; border: 1px solid #cbd5e1; color: #475569;
+  padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; transition: 0.2s;
+}
+.export-btn:hover { background: #f1f5f9; color: #0f172a; }
+
+/* Phân trang (Pagination) */
+.cg-pagination {
+  display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #f1f5f9;
+}
+.cg-page-btn {
+  padding: 8px 16px; border: 1px solid #cbd5e1; border-radius: 6px;
+  background: #fff; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: #475569; transition: 0.2s;
+}
+.cg-page-btn:hover:not(:disabled) { background: #f1f5f9; color: #0f172a;}
+.cg-page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.cg-page-info { font-size: 0.9rem; font-weight: 700; color: #64748b; }
+.cg-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cg-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cg-breadcrumb a:hover {
+  color: #002d5b;
+}
+
+.cg-breadcrumb span.current-page {
+  color: #002d5b;
+}

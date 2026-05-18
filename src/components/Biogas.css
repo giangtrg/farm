@@ -1,0 +1,237 @@
+/* ==========================================================================
+   BIOGAS MONITORING - PAGE STYLES
+   ========================================================================== */
+
+.biogas-wrapper {
+  background-color: #f4f7f9; 
+  min-height: 100vh;
+}
+
+.biogas-content {
+  padding: 100px 40px 40px 40px; 
+  max-width: 1600px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.biogas-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin-bottom: 10px; 
+}
+.biogas-header h1 { font-size: 1.8rem; font-weight: 700; color: #002d5b; margin: 0; }
+.biogas-header p { color: #64748b; font-size: 1rem; margin: 4px 0 0 0; }
+
+.biogas-card-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.biogas-panel-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #002d5b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========================================================
+   TẦNG 1: 1 THẺ CHỨA 3 GAUGE (TRÁI) & PRODUCTION CHART (PHẢI)
+   ======================================================== */
+.biogas-row-top-combined {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr; 
+  gap: 24px;
+}
+
+.biogas-gauges-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  gap: 10px; /* Thả lỏng gap cho thoáng */
+}
+
+.biogas-gauge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.biogas-gauge-lbl {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px; /* Thêm khoảng thở giữa chữ và đồng hồ */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2; 
+}
+
+/* KÉO DÃN GAUGE, BỎ MARGIN ÂM LỐ */
+.biogas-gauge-chart-box {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Tăng chiều cao để chứa đủ nửa cung tròn mà không bị ép */
+  display: flex;
+  justify-content: center;
+  margin-top: 0; /* Xóa margin âm gây dính chữ */
+}
+
+.biogas-gauge-val {
+  position: absolute;
+  bottom: 0px; /* Nâng số lên một chút cho ngay ngắn giữa cung */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem; 
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.biogas-gauge-val span {
+  font-size: 0.85rem; 
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ========================================================
+   TẦNG 2: STORAGE CHART & COMPOSITION PIES
+   ======================================================== */
+.biogas-row-mid-charts {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; 
+  gap: 24px;
+}
+
+.biogas-chart-container { 
+  width: 100%; 
+  flex: 1; 
+  min-height: 280px; 
+}
+
+/* LAYOUT CHO UPGRADING COMPARISON */
+.biogas-comparison-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.biogas-comparison-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.biogas-donut-wrapper { 
+  position: relative; 
+  flex: 1;
+  height: 220px; 
+}
+
+.biogas-pie-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.biogas-donut-center-text { 
+  position: absolute; top: 50%; left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center; 
+}
+.biogas-donut-center-text h3 { margin: 0; font-size: 1.3rem; font-weight: 800; color: #002d5b; }
+.biogas-donut-center-text p { margin: 0; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;}
+
+.biogas-custom-legend { display: flex; flex-direction: column; gap: 10px; }
+.biogas-legend-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 600; color: #475569;}
+.biogas-legend-color-wrap { display: flex; align-items: center; gap: 8px; }
+.biogas-legend-color { width: 14px; height: 14px; border-radius: 4px; }
+
+/* Legend ngang cho đồ thị Line/Bar */
+.biogas-legend-horizontal { display: flex; justify-content: center; gap: 16px; margin-bottom: 15px; }
+.biogas-legend-horizontal .biogas-legend-item { cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: #475569; }
+.biogas-legend-horizontal .biogas-legend-item:hover { opacity: 0.6; }
+.biogas-legend-horizontal .biogas-legend-color { width: 16px; height: 6px; border-radius: 2px; }
+
+/* ========================================================
+   TẦNG 3: pH, FILTER HEALTH, ALERTS
+   ======================================================== */
+.biogas-row-bot-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.biogas-panel-title-small {
+  font-size: 1.05rem; font-weight: 700; color: #002d5b;
+  margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;
+}
+
+/* pH Display */
+.biogas-ph-display {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; 
+  height: 100%; padding-bottom: 20px;
+}
+.biogas-ph-val { font-size: 3.5rem; font-weight: 800; color: #10b981; line-height: 1; margin-bottom: 10px;}
+.biogas-ph-status { font-size: 0.9rem; font-weight: 700; color: #059669; padding: 4px 16px; background: #d1fae5; border-radius: 20px;}
+
+/* Filter Health Progress */
+.biogas-progress-wrapper { width: 100%; margin-top: 15px; }
+.biogas-progress-info { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem; font-weight: 700; color: #475569; }
+.biogas-progress-bg { width: 100%; height: 14px; background: #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
+.biogas-progress-fill { height: 100%; background: #3b82f6; border-radius: 8px; transition: width 0.5s ease;}
+.biogas-filter-desc { font-size: 0.85rem; color: #64748b; margin-top: 15px; font-weight: 600; line-height: 1.4;}
+
+/* Alerts List */
+.biogas-info-list { display: flex; flex-direction: column; }
+.biogas-list-item { display: flex; align-items: flex-start; gap: 14px; padding: 12px 0; border-bottom: 1px dashed #e2e8f0; }
+.biogas-list-item:last-child { border-bottom: none; padding-bottom: 0; }
+.biogas-item-icon { margin-top: 2px; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;}
+.biogas-item-content { display: flex; flex-direction: column; gap: 4px;}
+.biogas-item-text { font-size: 0.9rem; font-weight: 600; color: #1e293b; line-height: 1.3;}
+.biogas-item-time { font-size: 0.75rem; font-weight: 600; color: #94a3b8; display: flex; align-items: center; gap: 4px;}
+.biogas-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.biogas-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.biogas-breadcrumb a:hover {
+  color: #002d5b;
+}
+
+.biogas-breadcrumb span.current-page {
+  color: #002d5b;
+}

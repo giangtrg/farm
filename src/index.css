@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  scrollbar-gutter: stable;
+  background-color: #f4f7f9;
+}
+
+/* ÉP CỨNG FONT CHO TOÀN BỘ THẺ HTML */
+* {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  box-sizing: border-box;
+}
+
+/* Ẩn thanh cuộn xấu xí */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }

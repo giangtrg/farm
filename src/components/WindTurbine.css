@@ -1,0 +1,126 @@
+/* ==========================================================================
+   WIND TURBINE - INDUSTRIAL SCADA LAYOUT (300 DEGREE GAUGE UPDATE)
+   ========================================================================= */
+
+.wind-wrapper {
+  background-color: #f4f7f9;
+  min-height: 100vh;
+}
+
+.wind-content {
+  padding: 100px 40px 40px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- BREADCRUMB --- */
+.wind-header { margin-bottom: 10px; }
+.wind-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
+.wind-breadcrumb a { color: #64748b; text-decoration: none; transition: color 0.2s; }
+.wind-breadcrumb a:hover { color: #002d5b; }
+.wind-breadcrumb span.current-page { color: #002d5b; }
+
+/* --- GRID LAYOUTS --- */
+.wind-row-top {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr; 
+  gap: 24px;
+  align-items: stretch;
+}
+
+.wind-row-bot {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* --- COMMON SCADA CARD --- */
+.wind-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wind-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #002d5b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+.wind-title-left { display: flex; align-items: center; gap: 8px; }
+
+/* --- TOP LEFT: KPI & STATUS BLOCKS --- */
+.wind-info-container { display: flex; flex-direction: column; gap: 20px; height: 100%; }
+.wind-kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.wind-kpi-lbl { font-size: 0.85rem; font-weight: 700; color: #64748b; margin-bottom: 8px; text-transform: uppercase; }
+.wind-kpi-val { font-size: 1.8rem; font-weight: 800; color: #0f172a; line-height: 1; }
+
+.wind-status-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-weight: 800; color: #002d5b; font-size: 1.05rem;}
+.wind-badge-active { background: #d1fae5; color: #059669; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;}
+.wind-status-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; font-size: 0.9rem; color: #475569; font-weight: 600; }
+.wind-status-row:last-child { border-bottom: none; padding-bottom: 0; }
+.wind-status-val { color: #0f172a; font-weight: 800; }
+
+/* --- CHARTS CONTAINER --- */
+.wind-chart-large { height: 320px; width: 100%; margin-top: 10px; position: relative; }
+
+.wind-powercurve-legend { display: flex; justify-content: center; gap: 24px; font-size: 0.85rem; font-weight: 700; color: #475569; margin-bottom: 10px; }
+.wind-pcl-item { display: flex; align-items: center; gap: 6px; }
+.wind-pcl-dot { width: 12px; height: 12px; border-radius: 3px; }
+.wind-pcl-dash { width: 20px; height: 3px; border-top: 3px dashed; }
+
+/* --- 300-DEGREE REAL-TIME POWER GAUGE --- */
+.wind-gauge-chart-box {
+  position: relative;
+  width: 100%;
+  height: 240px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.wind-gauge-footer { display: flex; justify-content: space-between; margin-top: auto; border-top: 1px dashed #f1f5f9; padding-top: 16px; }
+.wind-gf-col { display: flex; flex-direction: column; gap: 4px; }
+.wind-gf-lbl { font-size: 0.75rem; color: #64748b; font-weight: 700; }
+.wind-gf-val { font-size: 1.1rem; font-weight: 800; color: #0f172a; }
+
+/* --- WIND COMPASS CONTAINER (FIXED LETTERS OUTSIDE) --- */
+.wind-compass-container {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; 
+  height: 240px; padding: 10px 0 20px 0; margin-top: 10px;
+}
+
+.wind-radar-footer { display: flex; justify-content: space-between; margin-top: auto; border-top: 1px dashed #f1f5f9; padding-top: 16px;}
+.wind-rf-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.wind-rf-lbl { font-size: 0.75rem; color: #64748b; font-weight: 700; }
+.wind-rf-val { font-size: 1rem; font-weight: 800; color: #0f172a; }
+
+/* --- OVERVIEW --- */
+.wind-overview-circle {
+  width: 140px; height: 140px; margin: 20px auto 30px auto;
+  border: 4px dashed #3b82f6; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #f8fafc;
+}
+.wind-overview-circle p { margin: 0; font-size: 0.75rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+.wind-overview-circle h3 { margin: 0; font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1.2; }
+.wind-ov-list { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+.wind-ov-item { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #475569; padding: 6px 0; border-bottom: 1px dashed #f1f5f9;}
+.wind-ov-item:last-child { border-bottom: none; }
+.wind-ov-val { color: #0f172a; font-weight: 800; }

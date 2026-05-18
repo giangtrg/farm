@@ -1,0 +1,199 @@
+/* ==========================================================================
+   ALERTS HISTORY - INDUSTRIAL SCADA LAYOUT
+   ========================================================================== */
+
+.alert-wrapper {
+  background-color: #f4f7f9;
+  min-height: 100vh;
+}
+
+.alert-content {
+  padding: 100px 40px 40px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- PAGE HEADER (Đã đồng bộ) --- */
+.alert-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+.alert-page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #002d5b;
+  margin: 0;
+}
+.alert-page-header p {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 600;
+  margin: 4px 0 0 0;
+}
+
+/* --- CARD --- */
+.alert-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CARD TITLE (Đã đồng bộ) --- */
+.alert-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #002d5b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+/* --- FILTER BAR & EXPORT --- */
+.alert-filter-bar-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.alert-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.alert-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.alert-filter-label {
+  font-size: 0.9rem; font-weight: 700; color: #475569;
+}
+.alert-select {
+  padding: 8px 16px; border-radius: 8px; border: 1px solid #cbd5e1;
+  font-size: 0.95rem; font-weight: 600; color: #0f172a; outline: none;
+  cursor: pointer; background-color: #f8fafc; min-width: 180px;
+}
+
+/* Nút Export */
+.export-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: #fff; border: 1px solid #cbd5e1; color: #475569;
+  padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; transition: 0.2s;
+}
+.export-btn:hover { background: #f1f5f9; color: #0f172a; }
+
+/* ==========================================================================
+   ALERT TABLE
+   ========================================================================== */
+.alert-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  text-align: left; 
+  table-layout: fixed; 
+}
+
+/* Cột đã dãn rộng */
+.alert-table th:nth-child(1) { width: 190px; } /* Timestamp */
+.alert-table th:nth-child(2) { width: 200px; } /* Area */
+.alert-table th:nth-child(3) { width: 150px; } /* Device ID */
+.alert-table th:nth-child(4) { width: 140px; } /* Severity */
+.alert-table th:nth-child(5) { width: auto; }  /* Description */
+
+.alert-table th {
+  padding: 16px 12px; 
+  font-size: 0.85rem; font-weight: 800; color: #64748b;
+  border-bottom: 2px solid #cbd5e1; text-transform: uppercase;
+}
+.alert-table td {
+  padding: 16px 12px; 
+  font-size: 0.95rem; font-weight: 600; color: #1e293b;
+  border-bottom: 1px solid #f1f5f9; vertical-align: middle;
+  word-wrap: break-word;
+  transition: all 0.2s ease;
+}
+
+/* TRẠNG THÁI ROW: Chưa xem (Clickable) */
+.alert-row.unread {
+  cursor: pointer; 
+}
+.alert-row.unread:hover td {
+  background-color: #f8fafc;
+}
+.alert-row .alert-device-id {
+  font-family: 'Courier New', Courier, monospace; font-weight: 800; color: #0f172a;
+}
+
+/* TRẠNG THÁI ROW: Đã xem (Không thể click lại) */
+.alert-row.read {
+  opacity: 0.3; 
+  cursor: default; 
+}
+.alert-row.read td {
+  background-color: #fff; 
+}
+
+/* --- THỜI GIAN --- */
+.alert-time-wrap { 
+  display: flex; 
+  gap: 16px; 
+  align-items: center; 
+}
+.alert-time-date { font-size: 0.9rem; color: #64748b;}
+.alert-time-hour { font-size: 0.95rem; font-weight: 700; font-family: 'Courier New', Courier, monospace; color: #0f172a;}
+
+/* --- MỨC ĐỘ CẢNH BÁO (TEXT TRẦN) --- */
+.severity-text { 
+  font-size: 0.85rem; font-weight: 800; text-transform: uppercase; 
+}
+.severity-text.critical { color: #dc2626; }
+.severity-text.warning { color: #d97706; }
+.severity-text.info { color: #0284c7; }
+
+/* --- PHÂN TRANG (PAGINATION) --- */
+.alert-pagination {
+  display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #f1f5f9;
+}
+.alert-page-btn {
+  padding: 8px 16px; border: 1px solid #cbd5e1; border-radius: 6px;
+  background: #fff; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: #475569; transition: 0.2s;
+}
+.alert-page-btn:hover:not(:disabled) { background: #f1f5f9; color: #0f172a;}
+.alert-page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.alert-page-info { font-size: 0.9rem; font-weight: 700; color: #64748b; }
+.alert-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.alert-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.alert-breadcrumb a:hover {
+  color: #002d5b;
+}
+
+.alert-breadcrumb span.current-page {
+  color: #002d5b;
+}

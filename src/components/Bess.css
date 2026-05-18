@@ -1,0 +1,278 @@
+/* ==========================================================================
+   BESS MONITORING - CORE PARAMETERS SCADA LAYOUT
+   ========================================================================== */
+
+.bess-wrapper {
+  background-color: #f4f7f9;
+  min-height: 100vh;
+}
+
+.bess-content {
+  padding: 100px 40px 40px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- BREADCRUMB --- */
+.bess-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.bess-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.bess-breadcrumb a:hover {
+  color: #002d5b;
+}
+.bess-breadcrumb span.current-page {
+  color: #002d5b;
+}
+
+/* --- GRID LAYOUTS --- */
+.bess-row-top {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr; 
+  gap: 24px;
+  align-items: stretch;
+}
+
+.bess-row-bot {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* --- COMMON SCADA CARD --- */
+.bess-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bess-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #002d5b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Hỗ trợ đẩy badge sang phải */
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+/* Tiêu đề có icon đi kèm */
+.bess-title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Badge hiển thị Capacity */
+.bess-capacity-badge {
+  font-size: 0.8rem;
+  color: #0284c7;
+  background: #e0f2fe;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* --- SoC GAUGE & STATUS --- */
+.bess-gauge-chart-box {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.bess-gauge-val {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.bess-gauge-val span {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.bess-status-block {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px dashed #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bess-status-lbl {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bess-status-val {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+/* --- DATA ROWS & VALUES --- */
+.bess-data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0; /* Ép padding lại một chút để vừa 4 dòng */
+  border-bottom: 1px dashed #f1f5f9;
+}
+.bess-data-row:last-of-type {
+  border-bottom: none;
+}
+.bess-data-row label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.bess-val-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  justify-content: flex-end;
+}
+.bess-num {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.bess-unit {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  width: 30px;
+  text-align: left;
+}
+
+/* Progress bars for SoH */
+.bess-progress-container {
+  margin-top: auto;
+}
+.bess-progress-bg {
+  width: 100%;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.bess-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* --- CHARTS --- */
+.bess-chart-container {
+  height: 250px; 
+  width: 100%;
+  margin-top: 10px;
+}
+
+.bess-legend-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+.bess-legend-item {
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+.bess-legend-item:hover {
+  opacity: 0.6;
+}
+.bess-legend-pill {
+  width: 16px;
+  height: 6px;
+  border-radius: 4px;
+}
+
+/* --- LOCAL ALERTS --- */
+.bess-info-list {
+  display: flex;
+  flex-direction: column;
+}
+.bess-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.bess-list-item:last-child {
+  border-bottom: none;
+}
+.bess-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.bess-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bess-item-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+.bess-item-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

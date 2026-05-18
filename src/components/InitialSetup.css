@@ -1,0 +1,207 @@
+/* --- INITIAL SETUP CSS (Namespace: .is-) --- */
+.is-wrapper {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding: 60px 20px;
+}
+
+.is-card {
+    background: #ffffff;
+    max-width: 650px; /* Tăng chiều rộng xíu cho thoáng */
+    width: 100%;
+    border-radius: 20px; /* Bo góc nhẹ nhàng hơn */
+    padding: 50px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03); /* Đổ bóng cực nhẹ */
+    border: 1px solid #f1f5f9;
+}
+
+.is-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.is-header h2 {
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin: 0 0 12px 0;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.is-header p {
+    color: #64748b;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* XÓA ĐÁNH SỐ, DÙNG TIÊU ĐỀ PHẲNG */
+.is-section-label {
+    font-size: 0.9rem;
+    color: #064e3b; /* Xanh lá đậm thương hiệu */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 30px 0 20px 0;
+    display: block;
+}
+
+/* FORM FIELDS TRÔNG SẠCH SẼ HƠN */
+.is-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.is-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.is-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.is-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.is-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.2s;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+.is-input:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+/* STYLE RIÊNG CHO MÃ KÍCH HOẠT (NỔI BẬT HƠN) */
+.is-input.activation-code {
+    font-family: 'Roboto Mono', monospace; /* Dùng font monospace cho mã */
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-color: #10b981;
+    background: #ecfdf5;
+    color: #064e3b;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* SYSTEM SELECTION GRID (XÓA BỎ ICON) */
+.is-system-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.is-sys-card {
+    border: 1px solid #cbd5e1; /* Viền mỏng hơn */
+    border-radius: 14px;
+    padding: 24px; /* Tăng padding vì không còn icon */
+    cursor: pointer;
+    transition: 0.3s;
+    background: #ffffff;
+    position: relative;
+    text-align: center; /* Căn giữa chữ */
+}
+
+.is-sys-card:hover:not(.locked) {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+.is-sys-card.selected {
+    border-color: #10b981;
+    background: #ecfdf5;
+}
+
+.is-sys-card.locked {
+    cursor: not-allowed;
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+}
+
+.is-sys-info h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.15rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.is-sys-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Nút check nhỏ góc phải khi được chọn */
+.is-check-indicator {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color: #10b981;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.is-sys-card.selected .is-check-indicator {
+    opacity: 1;
+}
+
+.is-badge-required {
+    font-size: 0.7rem;
+    background: #ef4444;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* BUTTON */
+.is-btn {
+    width: 100%;
+    padding: 16px;
+    background: #064e3b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 50px;
+}
+
+.is-btn:hover {
+    background: #047857;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(4, 120, 87, 0.2);
+}
+
+@media (max-width: 650px) {
+    .is-form-grid, .is-system-grid { grid-template-columns: 1fr; }
+    .is-card { padding: 40px 20px; }
+}

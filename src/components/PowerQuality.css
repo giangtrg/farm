@@ -1,0 +1,175 @@
+/* ==========================================================================
+   POWER QUALITY ANALYTICS - DASHBOARD STYLE MATCH (UPDATED LAYOUT)
+   ========================================================================== */
+
+.pq-wrapper {
+  background-color: #f4f7f9; 
+  min-height: 100vh;
+}
+
+.pq-content {
+  padding: 100px 40px 40px 40px; 
+  max-width: 1600px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pq-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin-bottom: 10px; 
+}
+.pq-header h1 { font-size: 1.8rem; font-weight: 700; color: #002d5b; margin: 0; }
+.pq-header p { color: #64748b; font-size: 1rem; margin: 4px 0 0 0; }
+
+/* --- FILTER BAR --- */
+.pq-filter-bar {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+  background: #fff; padding: 16px 24px; border-radius: 12px; border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.pq-filter-group { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.pq-input-group { display: flex; align-items: center; gap: 10px; }
+.pq-label { font-size: 0.85rem; font-weight: 700; color: #475569; text-transform: uppercase; }
+
+.pq-select, .pq-date {
+  padding: 8px 14px; border: 1px solid #cbd5e1; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 600; color: #0f172a; outline: none; background: #fff; cursor: pointer;
+  transition: all 0.2s;
+}
+.pq-select:hover, .pq-date:hover { border-color: #94a3b8; }
+.pq-select:focus, .pq-date:focus { border-color: #3b82f6; }
+
+.pq-btn {
+  padding: 8px 20px; background: #3b82f6; color: white; border: none; border-radius: 8px;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 8px;
+}
+.pq-btn:hover { background: #2563eb; }
+.pq-btn:disabled { background: #94a3b8; cursor: not-allowed; }
+.pq-btn-outline { background: #fff; color: #475569; border: 1px solid #cbd5e1; }
+.pq-btn-outline:hover { background: #f1f5f9; color: #0f172a; }
+
+/* --- COMMON CARD PANELS --- */
+.pq-card-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pq-panel-title {
+  font-size: 1.1rem; font-weight: 600; color: #002d5b;
+  margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;
+}
+.pq-title-left { display: flex; align-items: center; gap: 8px; }
+.pq-title-controls { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+
+/* =========================================================
+   GRID SYSTEM (7:3 VÀ 5:5)
+   ========================================================= */
+.pq-grid-main {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.pq-grid-col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.pq-kpi-phasor-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.pq-grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* --- KPI CARDS LÀM LẠI SẠCH SẼ HƠN --- */
+.pq-kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pq-kpi-box { 
+  background: #fff; border: 1px solid #cbd5e1; border-radius: 10px; 
+  padding: 16px; display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.pq-kpi-header { display: flex; justify-content: space-between; align-items: center; }
+.pq-kpi-lbl { font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; }
+.pq-kpi-icon { width: 32px; height: 32px; border-radius: 8px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: #3b82f6; }
+.pq-kpi-val { font-family: 'Courier New', Courier, monospace; font-size: 1.8rem; font-weight: 800; color: #0f172a; line-height: 1; }
+.pq-kpi-val.warn { color: #ef4444; }
+
+/* PHASOR DIAGRAM CONTAINER TO RÕ - BỎ VIỀN THEO YÊU CẦU */
+.pq-phasor-box { 
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  overflow: hidden; height: 100%; min-height: 240px;
+}
+.pq-phasor-info {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pq-phasor-data-row {
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'Courier New', Courier, monospace; font-size: 0.95rem; font-weight: 800; color: #0f172a;
+}
+.pq-phasor-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+/* --- CHARTS STYLING --- */
+.pq-trend-box { height: 350px; width: 100%; }
+.pq-chart-mini { height: 300px; width: 100%; margin-top: 10px; }
+.pq-chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.pq-chart-header h4 { margin: 0; font-size: 1rem; font-weight: 600; color: #002d5b; }
+
+/* CUSTOM LEGENDS */
+.pq-custom-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px; margin-bottom: 15px; }
+.pq-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; color: #475569; cursor: default; }
+.pq-legend-color { width: 16px; height: 6px; border-radius: 2px; }
+
+/* --- EVENT LOG SẠCH SẼ --- */
+.pq-info-list { display: flex; flex-direction: column; overflow-y: auto; height: 100%; max-height: 680px; padding-right: 8px; }
+.pq-info-list::-webkit-scrollbar { width: 6px; }
+.pq-info-list::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
+
+.pq-list-item { 
+  display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; 
+  border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 12px;
+  cursor: pointer; transition: all 0.2s; background: #fff;
+}
+.pq-list-item:hover { background: #f8fafc; border-color: #cbd5e1; }
+/* Chỉ đổi màu nền nhẹ khi chọn, không tô viền */
+.pq-list-item.active { background: #f1f5f9; border-color: #94a3b8; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);}
+
+.pq-item-header { display: flex; justify-content: space-between; align-items: center; }
+.pq-item-title { font-size: 0.95rem; font-weight: 700; color: #0f172a; }
+.pq-item-time { font-size: 0.75rem; font-weight: 600; color: #94a3b8; display: flex; align-items: center; gap: 4px; }
+.pq-item-desc { font-size: 0.85rem; color: #475569; margin: 0; line-height: 1.5; }
+.pq-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pq-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.pq-breadcrumb a:hover {
+  color: #002d5b;
+}
+
+.pq-breadcrumb span.current-page {
+  color: #002d5b;
+}
